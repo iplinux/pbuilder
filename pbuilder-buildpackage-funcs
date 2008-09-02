@@ -32,12 +32,15 @@ function copydsc () {
 
 function checkbuilddep () {
     # call satisfydepends
-    local BUILDOPT="--binary-all"
+    local BUILDOPTS="--binary-all"
     case "${BINARY_ARCH}" in
-	yes) BUILDOPT="--binary-arch";;
+	yes) BUILDOPTS="--binary-arch";;
 	*) ;;
     esac
-    if "$PBUILDERSATISFYDEPENDSCMD" --control "$1" --chroot "${BUILDPLACE}" --internal-chrootexec "${CHROOTEXEC}" "${BUILDOPT}" ; then
+    if [ -n "${TARGET_ARCH}" ]; then
+        BUILDOPTS="$BUILDOPTS --target-arch $TARGET_ARCH"
+    fi
+    if "$PBUILDERSATISFYDEPENDSCMD" --control "$1" --chroot "${BUILDPLACE}" --internal-chrootexec "${CHROOTEXEC}" ${BUILDOPTS} ; then
 	:
     else
     # If asked to preserve the build place, and pbuilder-satisfydepends

@@ -76,6 +76,7 @@ pbuilder-options:
  --debootstrapopts [debootstrap options]
  --save-after-login/--save-after-exec
  --debootstrap [debootstrap|cdebootstrap]
+ --target-arch <arch>
 
 pdebuild-specific pbuilder-options:
  --pbuilderroot [command to obtain root privilege for pbuilder] 

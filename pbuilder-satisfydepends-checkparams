@@ -65,6 +65,10 @@ while [ -n "$1" ]; do
 	    BC_REGEXP='build-conflicts'
 	    shift
 	    ;;
+    --target-arch)
+        TARGET_ARCH="$2"
+        shift; shift
+        ;;
 	--continue-fail)
 	    CONTINUE_FAIL="yes"
 	    shift

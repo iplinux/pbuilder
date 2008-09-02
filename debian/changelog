@@ -1,3 +1,10 @@
+pbuilder (0.183~1.gbp6e9d9b.oi1) unstable; urgency=low
+
+  * Added --target-arch to parameters.
+  * Added Cross-Host-Build-Depends / Cross-Build-Depends processing.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Wed, 03 Sep 2008 05:05:18 +0700
+
 pbuilder (0.183~1.gbp6e9d9b) UNRELEASED; urgency=low
 
   ** SNAPSHOT build @6e9d9bdaff9623332388bd337969b462ebe38368 **

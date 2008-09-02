@@ -134,6 +134,23 @@ function versioneddep_to_aptcmd () {
 	echo "$PACKAGE_WITHVERSION"
 }
 
+convert_cross_deps() {
+    sed -e "s|[a-z0-9+.-]\+|&-$TARGET_ARCH-cross|g"
+}
+
+get_raw_build_depends() {
+    if [ -z "$TARGET_ARCH" ]; then
+        get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP"
+    else
+        get_control_re "$DEBIAN_CONTROL" "(xcs-)?cross-host-build-depends";
+        get_control_re "$DEBIAN_CONTROL" "(xcs-)?cross-build-depends" | convert_cross_deps
+    fi
+}
+
+get_build_depends() {
+    get_raw_build_depends | tr " " "/" | awk 'BEGIN { RS="," } { print }'
+}
+
 function print_help () {
     # print out help message
     cat <<EOF
@@ -148,6 +165,7 @@ Copyright 2002-2007  Junichi Uekawa <dancer@debian.org>
 --echo:        echo mode, do nothing. (--force-version required for most operation)
 --force-version: skip version check.
 --continue-fail: continue even when failed.
+--target-arch <arch>: use provided Debian architecture for processing cross build depends
 
 EOF
 }

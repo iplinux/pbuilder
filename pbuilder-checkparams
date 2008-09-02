@@ -171,6 +171,12 @@ while [ -n "$1" ]; do
 	    DEBBUILDOPTS="${DEBBUILDOPTS} -B"
 	    shift;
 	    ;;
+    --target-arch)
+        TARGET_ARCH="$2"
+        DEBBUILDOPTS="${DEBBUILDOPTS} -a$2"
+        EXTRAPACKAGES="$EXTRAPACKAGES dpkg-cross"
+        shift; shift;
+        ;;
 	--preserve-buildplace)
 	    PRESERVE_BUILDPLACE="yes"
 	    shift;

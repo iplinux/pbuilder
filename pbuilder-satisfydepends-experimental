@@ -39,9 +39,7 @@ function checkbuilddep_internal () {
     local CANDIDATE_VERSION
     local APTFLAG="-o APT::Install-Recommends=false"
     echo " -> Attempting to parse the build-deps"
-    for INSTALLPKGMULTI in $(get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP" |
-	tr " " "/" | \
-	awk 'BEGIN{RS=","} {print}'); do
+    for INSTALLPKGMULTI in $(get_build_depends); do
       echo " -> Considering build-dep$(echo "$INSTALLPKGMULTI" | tr "/" " " )"
       SATISFIED="no"
       for INSTALLPKG in $(echo "$INSTALLPKGMULTI" | \
