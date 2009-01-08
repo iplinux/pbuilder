@@ -1,20 +1,40 @@
-pbuilder (0.183~1.gbp6e9d9b.oi1) unstable; urgency=low
+pbuilder (0.185.ip1) unstable; urgency=low
 
-  * Added --target-arch to parameters.
-  * Added Cross-Host-Build-Depends / Cross-Build-Depends processing.
+  * First build for Inkpump:
+    * Added --target-arch to parameters.
+    * Added Cross-Host-Build-Depends / Cross-Build-Depends processing.
 
- -- Mikhail Gusarov <dottedmag@dottedmag.net>  Wed, 03 Sep 2008 05:05:18 +0700
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Fri, 09 Jan 2009 03:42:28 +0600
 
-pbuilder (0.183~1.gbp6e9d9b) UNRELEASED; urgency=low
+pbuilder (0.185) UNRELEASED; urgency=low
 
-  ** SNAPSHOT build @6e9d9bdaff9623332388bd337969b462ebe38368 **
+  * new snapshot
 
-  * UNRELEASED
-  * change pbuilder-testsuite to make pbuilder update etc. run without
-    cowdancer.
-  * added test things to --echo as well.
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 27 Nov 2008 22:07:51 +0900
 
- -- Junichi Uekawa <dancer@debian.org>  Tue, 12 Aug 2008 04:33:14 +0900
+pbuilder (0.184) unstable; urgency=low
+
+  [ Loïc Minier ]
+  * Set doc-base Section to "Debian"; (closes: #504596)
+  * Nicer comments in pbuilderrc; (closes: #504599)
+  * Downgrade cowdancer to Suggests; (closes: #504594)
+
+  [ Martin Bagge ]
+  * [INTL:sv] Swedish strings for pbuilder debconf (closes: #506595)
+
+ -- Junichi Uekawa <dancer@debian.org>  Thu, 27 Nov 2008 21:22:11 +0900
+
+pbuilder (0.183) unstable; urgency=low
+
+  [ Junichi Uekawa ]
+  * use my local approx mirror for testing, since Argentina Debconf
+    place does not have connection to cdn.debian.net / cdn.debian.or.jp
+  * REMOVEPACKAGES="", thanks to Sven Joachim (closes: #500002)
+
+  [ Ben Finney ]
+  * Dereference symlinks when copying hooks. (closes: #499358)
+
+ -- Junichi Uekawa <dancer@debian.org>  Wed, 01 Oct 2008 21:41:46 -0700
 
 pbuilder (0.182) unstable; urgency=low
 
