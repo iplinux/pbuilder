@@ -96,6 +96,11 @@ while [ -n "$1" ]; do
 	    PDEBUILD_PBUILDER="$2"
 	    shift; shift;
 	    ;;
+	--arch)
+	    echo "  -> Architecture: $2"
+	    ARCHITECTURE="$2"
+	    shift; shift;
+	    ;;
 	--help)
 	    showhelp
 	    ;;

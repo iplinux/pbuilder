@@ -1,10 +1,11 @@
-pbuilder (0.185.ip1) unstable; urgency=low
+pbuilder (0.185.ip1) asimov; urgency=low
 
   * First build for Inkpump:
     * Added --target-arch to parameters.
     * Added Cross-Host-Build-Depends / Cross-Build-Depends processing.
+    * Added handling of --target to pdebuild
 
- -- Mikhail Gusarov <dottedmag@dottedmag.net>  Fri, 09 Jan 2009 03:42:28 +0600
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Mon, 23 Feb 2009 00:57:39 +0600
 
 pbuilder (0.185) UNRELEASED; urgency=low
 
