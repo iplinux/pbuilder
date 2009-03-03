@@ -142,8 +142,16 @@ get_raw_build_depends() {
     if [ -z "$TARGET_ARCH" ]; then
         get_control_re "$DEBIAN_CONTROL" "$BD_REGEXP"
     else
-        get_control_re "$DEBIAN_CONTROL" "(xcs-)?cross-host-build-depends";
-        get_control_re "$DEBIAN_CONTROL" "(xcs-)?cross-build-depends" | convert_cross_deps
+        DEPS="${TARGET_ARCH}-cross-toolchain"
+        D1=$(get_control_re "$DEBIAN_CONTROL" "(xcs-)?cross-host-build-depends")
+        if [ x != "x$D1" ]; then
+            DEPS="$DEPS, $D1"
+        fi
+        D2=$(get_control_re "$DEBIAN_CONTROL" "(xcs-)?cross-build-depends" | convert_cross_deps)
+        if [ x != "x$D2" ]; then
+            DEPS="$DEPS, $D2"
+        fi
+        echo $DEPS
     fi
 }
 

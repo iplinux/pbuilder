@@ -1,5 +1,5 @@
 Source: pbuilder
-Section: devel
+Section: host/tools
 Priority: extra
 Maintainer: Debian pbuilder maintenance team <pbuilder-maint@lists.alioth.debian.org>
 Uploaders: Junichi Uekawa <dancer@debian.org>,
