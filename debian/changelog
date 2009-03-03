@@ -1,3 +1,10 @@
+pbuilder (0.185.ip3) asimov; urgency=low
+
+  * Added fetching the cross-build-depends to
+    pbuilder-satisfydepends-aptitude.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Wed, 04 Mar 2009 02:51:24 +0600
+
 pbuilder (0.185.ip2) asimov; urgency=low
 
   * Fixed fetching the cross-build-dependencies: $arch-cross-toolchain is
