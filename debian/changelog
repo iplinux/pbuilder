@@ -1,3 +1,10 @@
+pbuilder (0.185.ip4) asimov; urgency=low
+
+  * Fixed cross-build-depends parser to support versioned
+    cross-dependencies.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Sun, 15 Mar 2009 00:48:19 +0600
+
 pbuilder (0.185.ip3) asimov; urgency=low
 
   * Added fetching the cross-build-depends to
