@@ -135,7 +135,15 @@ function versioneddep_to_aptcmd () {
 }
 
 convert_cross_deps() {
-    sed -e "s|[a-z0-9+.-]\+|&-$TARGET_ARCH-cross|g"
+    perl -e "
+use strict;
+my @deps = split /,/, <STDIN>;
+my @cross_deps;
+foreach my \$dep (@deps) {
+  \$dep =~ s/([a-z0-9+.-]+)/\$1-$TARGET_ARCH-cross/;
+  push @cross_deps, \$dep;
+}
+print join ',', @cross_deps;"
 }
 
 get_raw_build_depends() {
