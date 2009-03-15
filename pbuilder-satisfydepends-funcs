@@ -137,7 +137,7 @@ function versioneddep_to_aptcmd () {
 convert_cross_deps() {
     perl -e "
 use strict;
-my @deps = split /,/, <STDIN>;
+my @deps = split /,/, (join '', <STDIN>);
 my @cross_deps;
 foreach my \$dep (@deps) {
   \$dep =~ s/([a-z0-9+.-]+)/\$1-$TARGET_ARCH-cross/;
