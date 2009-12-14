@@ -62,7 +62,7 @@ get_control_re() {
         /^[^ ]*:/ { p=0 }
         tolower($0) ~ /^'"$re"':/ { p=1 }
         { if (p && source) { print $0 } }' |
-        sed 's/^[^: ]*://'
+        sed 's/^[^: ]*:/ */'
 }
 
 function checkbuilddep_archdeps () {
