@@ -1,3 +1,9 @@
+pbuilder (0.185.ip6) zelazny; urgency=low
+
+  * Handle XCS-Cross-Needs-Toolchain: no
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Mon, 14 Dec 2009 16:09:59 +0600
+
 pbuilder (0.185.ip5) asimov; urgency=low
 
   * Fixed cross-build-depends parser to support multi-line
