@@ -1,3 +1,9 @@
+pbuilder (0.185.ip7) zelazny; urgency=low
+
+  * Fix broken handling of debian/control entries.
+
+ -- Mikhail Gusarov <dottedmag@dottedmag.net>  Mon, 14 Dec 2009 16:24:57 +0600
+
 pbuilder (0.185.ip6) zelazny; urgency=low
 
   * Handle XCS-Cross-Needs-Toolchain: no
